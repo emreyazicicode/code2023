@@ -1,15 +1,18 @@
-Mahmizər Həsənova
-Mədinə Abdulsəmədova
-Adil Rəhimov
-Rafiqzadə Rafiq
-Anar Əhmədov
-Minəxanım Hacımuradova
-Riyad Əhmədov
-Riyad Əbdürəhimov
-Məmmədli Lalə
-İlyas Abbasov
-Yusif Ağasalamlı 
-Ləman Rəhimli
-Həbibə Məmmədli
-Lala Taghiyeva
-Niyyət Rzayev
+
+talebeler = [
+    {"Mahmizər Həsənova":{"degree": "IT", "courses":["analytics", "statistics"], "no": 1234}},
+    {"Mədinə Abdulsəmədova":{"degree": "Business Informatics", "courses":["analytics", "statistics"], "no": 1234}},
+    {"Adil Rəhimov":{"degree": "Automation", "courses":["analytics"], "no": 1234}},
+    {"Rafiq Rafiqzadə":{"degree": "Automation", "courses":["analytics"], "no": 1234}},
+    {"Anar Əhmədov":{"degree": "Data Science", "courses":["analytics"], "no": 1234}},
+    {"Minəxanım Hacımuradova":{"degree": "", "courses":["analytics"], "no": 1234}},
+    {"Riyad Əhmədov":{"degree": "IT", "courses":["analytics"], "no": 1234}},
+    {"Riyad Əbdürəhimov":{"degree": "IT", "courses":["analytics"], "no": 1234}},
+    {"Lalə Məmmədli":{"degree": "Artificial Intelligence", "courses":["analytics"], "no": 1234}},
+    {"İlyas Abbasov":{"degree": "Computer Science", "courses":["analytics"], "no": 1234}},
+    {"Yusif Ağasalamlı ":{"degree": "Computer Science", "courses":["analytics"], "no": 1234}},
+    {"Ləman Rəhimli":{"degree": "Maths", "courses":["analytics"], "no": 1234}},
+    {"Həbibə Məmmədli":{"degree": "Maths", "courses":["analytics"], "no": 1234}},
+    {"Lala Taghiyeva":{"degree": "Policy Analysis", "courses":["analytics"], "no": 1234}},
+    {"Niyyət Rzayev":{"degree": "Automation", "courses":["analytics"], "no": 1234}}
+]
