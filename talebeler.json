@@ -1,11 +1,9 @@
-
-[
-    {"Mahmizər Həsənova":{"degree": "IT", "courses":["analytics", "statistics"], "no": 1234}},
+[    {"Mahmizər Həsənova":{"degree": "IT", "courses":["analytics", "statistics"], "no": 1234}},
     {"Mədinə Abdulsəmədova":{"degree": "Business Informatics", "courses":["analytics", "statistics"], "no": 1234}},
     {"Adil Rəhimov":{"degree": "Automation", "courses":["analytics"], "no": 1234}},
     {"Rafiq Rafiqzadə":{"degree": "Automation", "courses":["analytics"], "no": 1234}},
     {"Anar Əhmədov":{"degree": "Data Science", "courses":["analytics"], "no": 1234}},
-    {"Minəxanım Hacımuradova":{"degree": "", "courses":["analytics"], "no": 1234}},
+    {"Minəxanım Hacımuradova":{"degree": "Computer Engineering", "courses":["analytics"], "no": 1234}},
     {"Riyad Əhmədov":{"degree": "IT", "courses":["analytics"], "no": 1234}},
     {"Riyad Əbdürəhimov":{"degree": "IT", "courses":["analytics"], "no": 1234}},
     {"Lalə Məmmədli":{"degree": "Artificial Intelligence", "courses":["analytics"], "no": 1234}},
