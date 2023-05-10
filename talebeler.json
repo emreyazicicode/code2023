@@ -1,5 +1,5 @@
 
-talebeler = [
+[
     {"Mahmizər Həsənova":{"degree": "IT", "courses":["analytics", "statistics"], "no": 1234}},
     {"Mədinə Abdulsəmədova":{"degree": "Business Informatics", "courses":["analytics", "statistics"], "no": 1234}},
     {"Adil Rəhimov":{"degree": "Automation", "courses":["analytics"], "no": 1234}},
