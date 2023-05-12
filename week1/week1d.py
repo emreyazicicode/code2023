@@ -86,28 +86,45 @@ buyuk = list("ABCDEFGHIJKLMNOPQRSTUVWXYZ")
 digit = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
 
 def checkPassword( password ):
+	#: Check null
+	if password == None: 
+		return False
+	
+	if not type(password) is str:
+		return False
+		
+	#: Immediately return if the length is shorter than 8
 	if len(password) < 8:
 		return False
+	#: Must have at least 5 different characters
 	if len(set(password)) < 5:
 		return False
-
+	#: Declare variables
 	kucuk_var = False
 	buyuk_var = False
 	digit_var = False
-
+	#: Loop for each character in the password
 	for i, p in enumerate(password):
 
+		#: Check the previous item as the same of this item
 		if i > 0 and password[i] == password[ i-1 ]:
 			return False
+		#: If one character is followed by another, return false
+		if i > 0 and abs(ord(password[i]) - ord(password[i-1])) == 1:
+			return False
 
+		#: Check do they have capital, lower and digit
 		if p in kucuk:
+			print(p, "kucuk")
 			kucuk_var = True
 		elif p in buyuk:
+			print(p, "buyuk")
 			buyuk_var = True
 		elif p in digit:
+			print(p, "digit")
 			digit_var = True
 		
-
+	#: Evaluate the statement
 	if kucuk_var == True and buyuk_var == True and digit_var == True: 
 		return True
 	else:
@@ -201,19 +218,164 @@ def checkPassword4( password ):
 
 password = "Emre12345"
 
-print(checkPassword4("123456Aa"))
+print(checkPassword("AA12345ab"))
 
+
+
+# yaziciemre@gmail.com
+# seslufohes@gmail.com
 
 # invalids
 # axfdbcasdfs         ==> bc
 # dsadjfljl67asdfkjs  ==> 67
 # abc                 ==> ab, bc
-# 
+
+# valid
+# Ab14375975042
+# aBc7f9dsa87f90sa
 
 
 
 
 
+
+print(checkPassword("ejslkaj873849874"))
+
+# metin = "abcdef"
+# print(abs(ord(metin[3]) - ord(metin[2])) == 1)
+
+
+
+
+
+
+# ()
+# []
+
+
+# {} curly brace
+
+a = {"key": "value"}
+b = {1,2,3}
+c = "salam"
+d = f"merhaba / {c}"
+
+# ()
+a = (3, 4, 5) # tuple
+b = checkPassword("341239479") # method cagirma
+c = (3+4)/2 # onceliklendirme
+
+# []
+a = ['a', 'b', 'c', 'd']
+b = a[2]
+c = a[0:3]
+
+# .
+a = ""
+a.lower() # sub element
+a = 4
+b = a ** 2
+
+# +
+a = "3"
+b = "4"
+print(a+b)
+
+a = 3
+b = 4
+print(a+b)
+
+
+a = [0] * 5
+print(a)
+
+print(10%3)
+print(not True)
+print(True != True)
+print(100 // 9)
+
+if 1 > 0 and 0 > -1:
+	print("OK")
+
+def celsius_to_fahrenheit(celsius):
+	return celsius * 9/5 + 32
+
+if a == 3:
+	print("ok")
+elif a == 4 or a in [5,6,7]:
+	print("test")
+else:
+	print("ok2")
+
+def sicaklikKontrol( sicaklik ):
+	if sicaklik > 40:
+		return False
+	if sicaklik < 10:
+		return False
+	return True
+
+def sicaklikKontrol2( sicaklik ):
+	return sicaklik >= 10 and sicaklik <= 40
+
+def sicaklikKontrol3( sicaklik ):
+	a =  True if sicaklik >= 10 and sicaklik <= 40 else False
+	return a
+
+def sicaklikmetin( sicaklik ):
+	return 'cok sicak' if sicaklik > 30 else 'normal'
+
+
+def sicaklikmetin2( sicaklik ):
+	if sicaklik > 30:
+		return 'cok sicak'
+	else:
+		return 'sicak'
+
+def sicaklikmetin3( sicaklik ):
+	if sicaklik > 30:
+		return 'cok sicak'
+	return 'sicak'
+
+def sicaklikmetin3( sicaklik ):
+	if sicaklik > 30: return 'cok sicak'
+	return 'sicak'
+
+index = 0
+while index < 10:
+	print(index)	
+	index += 1
+
+
+for a in "testsasfdss":
+	if a == "s":
+		break
+	else:
+		pass
+
+
+talebeler = [
+	{'name': 'ahmet', 'no':12342},
+	{'name': 'ali', 'no':1389},
+	{'name': 'mehmet', 'no':389},
+]
+
+
+def lookupTalebe( no ):
+	for t in talebeler:
+		if t['no'] == no:
+			return t
+	return None
+
+age1 = 3
+age2 = 3.0
+print(5 * age1)
+print(5 * age2)
+
+
+max_memory = 64.0
+
+
+# var types
 
 
 
