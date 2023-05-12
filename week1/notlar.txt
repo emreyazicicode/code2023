@@ -1,0 +1,19 @@
+
+# NOTE NOTE NOTE 
+# a = ['x', 'y', 'z']
+# print(a[1]) ==> 'y'
+# list[i]
+# i = index,
+# returns = value at index 
+
+# a = {'x': 3, 'y': 4}
+# print(a['x']) ==> 3
+# dict[i]
+# i = key,
+# returns value at key
+
+# for i in dict:
+#    i ==> key
+
+# for i in list:
+#    i ==> value
