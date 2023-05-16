@@ -1,3 +1,4 @@
+import json
 
 s = """
 
@@ -403,6 +404,7 @@ for m in members:
 
 
 
+
 for f in NESTED_STRUCTURE:
     members = NESTED_STRUCTURE[f]['members']
     members2 = [m.capitalize() for m in members] # "for m in members" is always fixed
@@ -415,5 +417,161 @@ for f in NESTED_STRUCTURE:
     print(f, members)
     print(f, members2)
 
+# SHORT FOR
 
+
+
+# RIASEC counts
+students = {
+    'Minəxanım Hacımuradova':[0, 7, 5, 6, 4, 4], # I
+    'Lala Taghiyeva':[2, 5, 3, 7, 1, 3], # S
+    'Yusif Ağasalamlı':[3, 4, 2, 3, 2, 2], # I
+    'Həbibə Məmmədli':[3, 6, 2, 3, 2, 7], # C
+    'Niyyət Rzayev':[3, 6, 4, 5, 6, 4], #...
+    'Adil Rəhimov':[4, 5, 4, 3, 2, 5],
+    'Riyad Əhmədov':[4, 5, 5, 4, 4, 6],
+    'Ləman Rəhimli':[4, 6, 3, 5, 4, 4],
+    'Riyad Əbdürəhimov':[4, 6, 4, 5, 7, 6],
+    'İlyas Abbasov':[4, 6, 5, 6, 3, 3],
+    'Lalə Məmmədli':[4, 8, 6, 6, 4, 2],
+    'Anar Əhmədov':[5, 7, 5, 6, 6, 3],
+    'Mahmizər Həsənova':[6, 4, 3, 7, 5, 4],
+    'Mədinə Abdulsəmədova':[6, 7, 5, 4, 6, 3]
+}
+
+values = list(students.values())
+
+print(values)
+"""
+[[0, 7, 5, 6, 4, 4], 
+ [2, 5, 3, 7, 1, 3], 
+ [3, 4, 2, 3, 2, 2], 
+ [3, 6, 2, 3, 2, 7], 
+ [3, 6, 4, 5, 6, 4], 
+ [4, 5, 4, 3, 2, 5], 
+ [4, 5, 5, 4, 4, 6], [4, 6, 3, 5, 4, 4], [4, 6, 4, 5, 7, 6], [4, 6, 5, 6, 3, 3], [4, 8, 6, 6, 4, 2], [5, 7, 5, 6, 6, 3], [6, 4, 3, 7, 5, 4], [6, 7, 5, 4, 6, 3]]
+"""
+
+# LIST OF LIST
+# ARRAY OF ARRAY
+# 2D-ARRAY
+
+# Task: Print only RIASEC's [I]
+# [0, 7, 5, 6, 4, 4]
+# R = 0, I = 7 ....
+# 
+
+pp.pprint(values)
+
+INVESTIGATIVE = [ v[1] for v in values ]
+print(INVESTIGATIVE)
+
+INVESTIGATIVE2 = []
+for v in values:
+    INVESTIGATIVE2.append( v[1] )
+
+# How many questions have been answered for each student
+TOTAL = [sum(v) for v in values]
+print(TOTAL)
+
+average = lambda values: sum(values) / len(values)
+
+AVERAGES = [average(v) for v in values]
+print(AVERAGES)
+
+ROUNDED_AVERAGES = [round(average(v), 1) for v in values]
+print(ROUNDED_AVERAGES)
+
+HIGH_LOW = ['HIGH' if round(average(v), 1) > 5.0 else 'LOW' for v in values]
+#                                   v = [3, 4, 2, 3, 2, 2]
+#                           average = 2.6666666666
+#                      round = 2.6
+#                   if "LOW"
+print(HIGH_LOW)
+
+# Filtering inside a "short for"
+# We can use the same thing for dictionary
+students = {s:k for s,k in students.items()}
+
+TOTAL = {s:sum(k) for s,k in students.items()}
+MAXES = {s:max(k) for s,k in students.items()}
+MINS = {s:min(k) for s,k in students.items()}
+AVGS = {s:average(k) for s,k in students.items()}
+
+print("TOTAL", TOTAL)
+print("MAXES", MAXES)
+print("MINS", MINS)
+print("AVGS", AVGS)
+
+
+
+
+# GOAL: Find the max item INDEX !!!
+# GOAL: Find the max value (max([1,2,3,4,5,6])) ==> 6
+
+
+RIASEC = [
+    'Realistic',
+    'Investigative',
+    'Artistic',
+    'Social',
+    'Enterpreneur',
+    'Conventional'
+]
+
+def findWithMaxValue( values: list ) -> str:
+    foundmaxvalue = 0
+    foundmaxindex = 0
+
+    for i in range(len(values)): 
+        # ---------^ 6
+        # ---^ 0, 1, 2, 3, 4, 5
+        if values[i] > foundmaxvalue:  # 7 > 5
+            foundmaxvalue = values[i]  # 7
+            foundmaxindex = i          # 3
+    
+    return foundmaxindex
+
+MERGED = {s:{'total': sum(k), 'max': max(k), 'min': min(k), 'avg': round(average(k),1), 'most': RIASEC[findWithMaxValue(k)] } for s, k in students.items()}
+
+
+# LIST OF LIST
+# DICTIONARY OF DICTIONARY - NESTED
+expected = {
+    'Minəxanım Hacımuradova': {
+        'total': 27, 'max': 7, 'min': 2, 'avg': 3.6, 'most': None
+    }
+}
+
+
+"""
+TOTAL {'Minəxanım Hacımuradova': 26, 'Lala Taghiyeva': 21, 'Yusif Ağasalamlı': 16, 'Həbibə Məmmədli': 23, 'Niyyət Rzayev': 28, 'Adil Rəhimov': 23, 'Riyad Əhmədov': 28, 'Ləman Rəhimli': 26, 'Riyad Əbdürəhimov': 32, 'İlyas Abbasov': 27, 'Lalə Məmmədli': 30, 'Anar Əhmədov': 32, 'Mahmizər Həsənova': 29, 'Mədinə Abdulsəmədova': 31}
+MAXES {'Minəxanım Hacımuradova': 7, 'Lala Taghiyeva': 7, 'Yusif Ağasalamlı': 4, 'Həbibə Məmmədli': 7, 'Niyyət Rzayev': 6, 'Adil Rəhimov': 5, 'Riyad Əhmədov': 6, 'Ləman Rəhimli': 6, 'Riyad Əbdürəhimov': 7, 'İlyas Abbasov': 6, 'Lalə Məmmədli': 8, 'Anar Əhmədov': 7, 'Mahmizər Həsənova': 7, 'Mədinə Abdulsəmədova': 7}
+MINS {'Minəxanım Hacımuradova': 0, 'Lala Taghiyeva': 1, 'Yusif Ağasalamlı': 2, 'Həbibə Məmmədli': 2, 'Niyyət Rzayev': 3, 'Adil Rəhimov': 2, 'Riyad Əhmədov': 4, 'Ləman Rəhimli': 3, 'Riyad Əbdürəhimov': 4, 'İlyas Abbasov': 3, 'Lalə Məmmədli': 2, 'Anar Əhmədov': 3, 'Mahmizər Həsənova': 3, 'Mədinə Abdulsəmədova': 3}
+AVGS {'Minəxanım Hacımuradova': 4.333333333333333, 'Lala Taghiyeva': 3.5, 'Yusif Ağasalamlı': 2.6666666666666665, 'Həbibə Məmmədli': 3.8333333333333335, 'Niyyət Rzayev': 4.666666666666667, 'Adil Rəhimov': 3.8333333333333335, 'Riyad Əhmədov': 4.666666666666667, 'Ləman Rəhimli': 4.333333333333333, 'Riyad Əbdürəhimov': 5.333333333333333, 'İlyas Abbasov': 4.5, 'Lalə Məmmədli': 5.0, 'Anar Əhmədov': 5.333333333333333, 'Mahmizər Həsənova': 4.833333333333333, 'Mədinə Abdulsəmədova': 5.166666666666667}
+
+"""
+
+
+
+
+# order number, sira numarasi
+print( findWithMaxValue( [2, 5, 3, 7, 1, 3] ) )
+
+print( RIASEC[ findWithMaxValue( [2, 5, 3, 7, 1, 3] ) ] )
+
+
+
+print(json.dumps(MERGED))
+pp.pprint(MERGED)
+
+FILTERED = {k:v for k,v in MERGED.items() if v['most'] != 'Investigative'}
+#           EXTRACTION     INPUT          CONDITION
+# Merged in icindeki, her bir itemdan, VALUE'sunun most unun Investigative olmayanlarini al
+
+
+
+FILTERED = {k:v for k,v in MERGED.items() if v['max'] < 4}
+
+print(FILTERED)
 
