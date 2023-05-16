@@ -1,0 +1,7 @@
+[
+    {"from":"SAW", "to":"GYD", "price": 300, "business": 3900},
+    {"from":"IST", "to":"GYD", "price": 330, "business": 4500},
+    {"from":"GYD", "to":"LHT", "price": 1200, "business": 6500},
+    {"from":"LHT", "to":"IST", "price": 1000, "business": 5000},
+    {"from":"GYD", "to":"MON", "price": 1250, "business": 6000}
+]

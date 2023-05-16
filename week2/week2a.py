@@ -570,8 +570,179 @@ FILTERED = {k:v for k,v in MERGED.items() if v['most'] != 'Investigative'}
 # Merged in icindeki, her bir itemdan, VALUE'sunun most unun Investigative olmayanlarini al
 
 
-
 FILTERED = {k:v for k,v in MERGED.items() if v['max'] < 4}
 
 print(FILTERED)
+
+
+
+
+# class =  TEMPLATE = kalip = sablon = structure
+# 1 tane sablon var
+
+# object = urun = nesne = deger
+# N tane nesne uretebiliyorum
+
+
+
+
+# DEFINITION
+def mutlak( sayi ):
+    return abs(sayi)
+
+
+# CALLING
+a = mutlak(-3)
+
+
+
+
+
+class Kek:
+    tur = None
+    meyve = []
+
+
+yeni_kek1 = Kek()
+yeni_kek1.tur = 'kakaolu'
+yeni_kek1.meyve.append( 'cilek' )
+
+yeni_kek2 = Kek()
+yeni_kek2.tur = 'vanilyali'
+yeni_kek2.meyve.append( 'muz' )
+yeni_kek2.meyve.append( 'elma' )
+
+
+
+
+
+
+flight_prices = json.load(open('flights.json', 'r')) # r = reading
+print("flight_prices", flight_prices)
+
+# CONSTANT, GLOBAL
+Airbus_A330 = 295 
+# 295-280 = 15
+
+# BAKU --> ESKISEHIR (TR) [ YOK ]
+
+
+# DEFINITION
+# STRICT = ACIK, EXPLICIT, SABIT
+class Flight: # UCUS 
+    haradan = None
+    haraya = None
+    nezaman = None
+    havayolu = None
+    kapasite = Airbus_A330 # koltuk sayisi = kapasite
+
+    def ucretHesapla( self ) -> int:
+        # {"from":"SAW", "to":"GYD", "price": 300, "business": 3900},
+        for flight in flight_prices:
+            if flight['from'] == self.haradan and flight['to'] == self.haraya:
+                return flight['price']
+        # HIC BIR TANESINE ESLEMESI
+        # BOYLE BIR UCUS YOK!
+        return 0 # bu ucus ile alakali bilgi yok?
+        #return None
+        # pulsuz
+
+    def koltukVarMi( self ) -> bool:
+        return self.kapasite > 0
+        """      
+        if self.kapasite > 0:
+            return True
+        else:
+            return False
+        """  
+            
+    def biletAl( self ) -> bool:
+        if self.kapasite == 0: return False # BILET ALAMIYORUZ!!!! BILET KALMAMIS
+        self.kapasite = self.kapasite - 1 # SATILDI
+        return True # BILET VAR, 
+
+    def biletIptal( self ) -> bool:
+        if self.kapasite == Airbus_A330: return False # ALINMAMIS BILET IPTALI, ABSURD, SACMA
+        self.kapasite = self.kapasite + 1 # IPTAL EDILDIGI ICIN, YER ACILDI, KAPASITE ARTTI
+        return True
+
+# istanbuldan bakuye saat 19 de azerbajian hava yollari vs .a.f.
+# ELIMIZDEKI VERIYI KALIPLASTIRIYOR STRUCTURIZE EDIYOR
+
+# CALLING
+nesne1 = Flight()
+nesne2 = Flight()
+
+# Data storing
+nesne1.nezaman = (19, 45)
+nesne1.haradan = 'SAW' # sabiha gokcen, istanbul
+nesne1.haraya = 'GYD' # heyder aliyev, baku
+nesne1.havayolu = 'Azerbaijan Havayollari'
+
+nesne1.biletAl() # BILET ALMA AKSIYONUNDA, NE GIBI ISLEM YAPMAK ISTIYORSAM
+
+
+
+
+"""
+nesne1.kapasite = 200
+nesne1.kapasite -= 10
+nesne1.kapasite += 1
+# NASIL, NEDEN, NEREDEN mudahale ettik? 
+# KONTROLDEN CIKABILIR
+"""
+"""
+for i in range(280):
+    print( i, nesne1.biletAl() )
+
+for i in range(15):
+    nesne1.biletIptal()
+# 15 + 15  = 30
+"""
+print("KALAN KAPASITE", nesne1.kapasite)
+
+print("UCRET -- KAC PUL", nesne1.ucretHesapla() )
+
+# Data storing
+nesneA = {
+    'haradan': 'SAW',
+    'haraya': 'GYD',
+    'nezaman': (19,45),
+    'havayolu': 'Azerbaijan Havayollari'
+}
+
+
+# BU FONKSIYON GENEL DEGIL!!!!, OZEL 
+def ucretHesapla2( nesne: dict ) -> int:
+    if nesne['haradan'] == 'SAW' and nesne['haraya'] == 'GYD':
+        return 300
+
+
+def ucretHesapla3( nesne: Flight ) -> int:
+    if nesne.haradan == 'SAW' and nesne.haraya == 'GYD':
+        return 300
+
+
+print("ucretHesapla2",  ucretHesapla2( nesneA ) )
+print("ucretHesapla3",  ucretHesapla3( nesne1 ) )
+
+
+nesneA['haraya'] = '....'
+nesneA['ucret'] = (300, 'manat')
+
+
+# DICTIONARY = ELASTIC
+# CLASS = STATIC
+# DICTIONARY = SADECE DATA VAR
+# CLASS = METHOD + DATA VAR
+
+
+
+
+
+
+
+
+
+
 
