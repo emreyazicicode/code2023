@@ -94,6 +94,10 @@ print(s.firstname)
 print(s2.firstname)
 
 
+# DATA SCIENCE 
+# DATA
+
+
 """
 class Person:
     def __init__( self ):
@@ -118,6 +122,24 @@ class Lecturer( Person ):
 s = Student(123)
 s.firstname = "X"
 """
+
+
+
+
+s = Student("Ahmet", "YILMAZ", 1506)
+s.gender = "Male"
+s.universityyear = 2
+
+print( s )
+# <Student object at 0x7ff65529e460>
+
+
+# Female 2 1506 x y
+# x, y, female, 2 
+#? Why it should be in that order?
+
+
+
 
 
 
