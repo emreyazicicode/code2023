@@ -1,0 +1,9 @@
+CREATE TABLE `code`.`students` (
+  `id` INT NOT NULL AUTO_INCREMENT,
+  `name` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`id`));
+
+
+1 – Mutlaka her tablo da bir tane PRIMARY KEY	
+		KEY: is one or a list of columns which uniquely identifies each ROW
+
