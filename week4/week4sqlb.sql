@@ -34,3 +34,5 @@ SELECT firstname, birthdate, year(now()) - year(birthdate) AS Age, '' as Burc FR
 WHERE MONTH(NOW()) = MONTH(birthdate)
 AND DAY(NOW()) = DAY(birthdate);
 
+
+
