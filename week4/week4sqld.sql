@@ -7,3 +7,12 @@ INNER JOIN code.cities c ON cu.city = c.city
 SET cu.cityid = c.cityid;
 
 
+
+
+
+
+
+
+
+
+
