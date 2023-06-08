@@ -204,3 +204,6 @@ for c in df.columns:
 
 # RULE: if there is only "ONE" value in a column, DELETE
 # RULE: if cardinality is 1.0, DELETE
+
+
+
