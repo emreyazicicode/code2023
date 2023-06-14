@@ -312,7 +312,7 @@ plotter( df, roles,
         #('totcalls', 'marital'), # CN
         #('prizm_social_one', 'marital'), # CC
         
-        ('marital', 'prizm_social_one'), # NCC
+        ('rev_Mean', 'da_Mean','totcalls'), # NNN => NP
         #('totcalls', 'marital', 'rev_Mean'), # CNN
     ], 
     'figures' 
