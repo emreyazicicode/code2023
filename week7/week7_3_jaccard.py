@@ -1,3 +1,5 @@
+import sys
+import numpy as np 
 people = {
     "Mahmizər Həsənova": ['t-shirt','coca-cola','lays','yogurt','spf cream','jean','bracelet'],
     "Mədinə Abdulsəmədova": ['nemlendirici','ayaqqabi','spor tayt','b12 vitamin','gunes kremi','dedektifsen oyunu','stefan zweig- amok','kemikli bulka','simit'],
@@ -67,3 +69,72 @@ Lalə Məmmədli Anar Əhmədov 0.06666666666666667
 Yusif Ağasalamlı Lalə Məmmədli 0.07142857142857142
 Ləman Rəhimli Lalə Məmmədli 0.07142857142857142
 """
+
+#: Imports
+import pandas as pd
+#: Set the path
+path = "week7_Sales Transaction v.4a.csv"
+#: Read the file
+df = pd.read_csv(path, parse_dates=['Date'])
+#: For each customer pair [a,b] find the jaccard similarity
+# ---> Create a dataframe of similarities
+# ---> customer1, customer2, similarity [ if only greater than 0 ]
+# ---> Create a different cleanup function to cleanup names
+
+
+"""
+lst = ['Emre YAZICI', 'Mahmizər Həsənova', 'Mədinə Abdulsəmədova', 'Adil Rəhimov', 'Rafiq Rafiqzadə', 'Anar Əhmədov', 'Minəxanım Hacımuradova', 'Riyad Əhmədov', 'Riyad Əbdürəhimov', 'Lalə Məmmədli', 'Ləman Rəhimli', 'Niyyət Rzayev']
+import random
+random.shuffle(lst)
+team1 = lst[0:int(len(lst)/2)]
+team2 = lst[int(len(lst)/2):]
+print(team1)
+print(team2)
+
+
+team1 = ['Anar Əhmədov', 'Riyad Əbdürəhimov', 'Rafiq Rafiqzadə', 'Adil Rəhimov', 'Ləman Rəhimli', 'Niyyət Rzayev']
+team2 = ['Lalə Məmmədli', 'Minəxanım Hacımuradova', 'Riyad Əhmədov', 'Emre YAZICI', 'Mahmizər Həsənova', 'Mədinə Abdulsəmədova']
+"""
+
+
+
+customer_products = {}
+for customername, customerdata in df.groupby('CustomerNo'):
+    #: Unique list of products for the customer customername
+    pr = list(set(customerdata['ProductName'].tolist()))
+    if len(pr) > 10:
+        customer_products[ customername ] = pr
+
+
+counts = []
+for v in customer_products.values():
+    counts.append(len(v))
+
+print( np.mean(counts) )
+
+
+similarities = pd.DataFrame(columns = ['a', 'b', 'sim', 'len-a', 'len-b'])
+"""
+for a in customer_products:
+    for b in customer_products:
+        if a > b:
+            sim = jaccardSimilarity( [cleanup(i) for i in customer_products[a]], [cleanup(i) for i in customer_products[b]] )
+            if sim > 0.50:
+                similarities.loc[ len(similarities) ] = [
+                    a, b, sim, len(customer_products[a]), len(customer_products[b])
+                ]
+                print(str(a) + "|" + str(b), sim, sim * (len(customer_products[a]) + len(customer_products[b])) / 83, len(similarities))
+
+                if len(similarities) % 10 == 0:
+                    similarities.to_csv("week7_similarities.csv")
+"""
+
+# 14877	14351
+dfa = list(set(df[ df['CustomerNo'] == 14877 ]['ProductName'].tolist()))
+dfb = list(set(df[ df['CustomerNo'] == 14351 ]['ProductName'].tolist()))
+
+dfa.sort()
+dfb.sort()
+
+print('\033[92m', dfa[0:15], '\033[0m')
+print('\033[94m', dfb[0:15], '\033[0m')
