@@ -75,7 +75,7 @@ import pandas as pd
 #: Set the path
 path = "week7_Sales Transaction v.4a.csv"
 #: Read the file
-df = pd.read_csv(path, parse_dates=['Date'])
+df = pd.read_csv(path, parse_dates=['Date'], nrows=50000)
 #: For each customer pair [a,b] find the jaccard similarity
 # ---> Create a dataframe of similarities
 # ---> customer1, customer2, similarity [ if only greater than 0 ]
@@ -138,3 +138,30 @@ dfb.sort()
 
 print('\033[92m', dfa[0:15], '\033[0m')
 print('\033[94m', dfb[0:15], '\033[0m')
+
+
+product_product_freq = {}
+
+for g in df.groupby('TransactionNo'):
+    
+    print("=========================")
+    products_in_this_transaction = list(set(g[1]['ProductName'].tolist()))
+    
+    if len(products_in_this_transaction) > 2 and len(products_in_this_transaction) < 50:
+        print(products_in_this_transaction)
+        for a in products_in_this_transaction:
+            for b in products_in_this_transaction:
+                if a > b:
+                    key = a+"|"+b
+                    if key not in product_product_freq:
+                        product_product_freq[key] = 1
+                    else:
+                        product_product_freq[key] += 1
+
+
+
+for p in product_product_freq:
+    if product_product_freq[p] == 11 and p[0] == 'S':
+        print(p, product_product_freq[p])
+
+
