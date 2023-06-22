@@ -1,0 +1,4 @@
+from scipy import stats
+for k in [8,10,11,12,13,14,15,20,25,30,35,40]:
+    print(k, '===> %',stats.percentileofscore(df['Price'], k, kind='rank'))
+    
