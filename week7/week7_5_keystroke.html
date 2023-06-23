@@ -1,0 +1,39 @@
+
+<html>
+    <style type="text/css">
+        body{font-family: Ubuntu, Arial, Tahoma;}
+    </style>
+    <title>Code 2023 - Data Science</title>
+    <script type="text/javascript" src="jquery-3.7.0.min.js"></script>
+    <h2>Aşağıdaki yazıyı yazınız:</h2>
+    <h3>the quick brown</h3>
+    
+    Username:<br>
+    <input type="text" name="usr" id="usr" style="font-size:20px; height:30px; width:450px;"><br><br>
+    <input type="text" name="txt" id="txt" style="font-size:20px; height:30px; width:450px;">
+
+    <div id="data" name="data" style="margin-top:10px; padding:3px; border-style:solid; border-width:1px; border-color:lightgray;">
+
+    </div>
+
+    <script type="text/javascript">
+        $( "#txt" ).on( "keyup", function() {
+            const d = new Date();
+            var ticks = (d.getTime());
+            var diff = ticks - lasttime;
+            var user = $('#usr').val();
+            $('#data').html( $('#data').html() + "data['" + user + "']['" + lastkey + "'] = " + diff + "<br>" );
+        } );
+
+        var lasttime = 0;
+        var lastkey = null;
+        $( "#txt" ).on( "keydown", function(event) {
+            const d = new Date();
+            var ticks = (d.getTime());
+            lasttime = ticks;
+            lastkey = String.fromCharCode(event.which);
+        } );
+    </script>
+
+
+</html>
