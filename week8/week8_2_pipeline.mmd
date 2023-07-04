@@ -1,0 +1,34 @@
+
+graph TD;
+
+STEP5[Transform, normalize]
+STEP4[Fill up nulls]
+STEP3[Cleanup invalid values!!]
+STEP2[Remove unnecessary variables]
+STEP1[Transform the representation of variables]
+STEP0[Descriptive analytics]
+STEP7[Remove the outliers]
+STEP8[Remove unlogical values]
+STEP6[Categorical variables]
+
+STEP9[Shuffle, Make it time independed]
+STEP10[Limit only according project, and time]
+STEP11[Split into parts]
+STEP12[Train]
+
+subgraph Preprocessing
+    STEP0 --> STEP1
+    STEP1 --> STEP2
+    STEP2 --> STEP3
+    STEP3 --> STEP4
+    STEP4 --> STEP5
+    STEP5 --> STEP6
+    STEP6 --> STEP7
+    STEP7 --> STEP8
+end
+subgraph Training
+    STEP8 --> STEP9
+    STEP9 --> STEP10
+    STEP10 --> STEP11
+    STEP11 --> STEP12
+end
