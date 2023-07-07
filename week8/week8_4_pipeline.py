@@ -29,8 +29,24 @@ from sklearn.ensemble import RandomForestClassifier
 clf = RandomForestClassifier(max_depth=6, random_state=0)
 
 clf.fit(train, train_y)
-test['PRED'] = clf.predict(test)
+PRED = clf.predict(test) # 1/0
+PROB = clf.predict_proba(test)[:,1] # probability 0.33,0.68, 0.90
+
+# NOTE:
+# PROBA
+# 1- How certain the algorithm is
+# 2- Better accuracy
+
+
+test['PRED'] = PRED
+test['PROB'] = PROB
 test['REAL'] = test_y
+
+test['YENI-PROB'] = test['PROB'] > 0.42
+
+#! test['prediction'] = tp * 20 + .....
+#! test['prediction'] > 0.19
+
 
 test.to_csv("week8_4_out.csv")
 
@@ -58,7 +74,7 @@ d = [-0.99, 0.55]
 
 e = [0.02, 0.5, -0.6, 0.92]
 
-
+"""
 MODEL = [
     a,b,c,d,e
 ]
@@ -79,7 +95,6 @@ for iteration in range(100):
         d = df[i].to_dict()
         prediction = fire( d['age'], d['creditscore'])
         
-        
         error = d['churn'] - prediction
         if i % 4 == 0:
             updateWeight( error )
@@ -88,7 +103,7 @@ for iteration in range(100):
     if totalerror < 0.05:
         break
 
-
+"""
 
 
 
