@@ -70,9 +70,10 @@ for t in range(0,100):
     fp = test['FP'].mean() * COST_VECTOR['FP']
     fn = test['FN'].mean() * COST_VECTOR['FN']
 
-    a = accuracy_score(test['REAL'], test['regenerated'])
-    #: weighted accuracy
+    #a = accuracy_score(test['REAL'], test['regenerated'])
+    #: weighted accuracy, overwrite
     a = (tp + tn) / (tp + tn + fn + fp)
+
 
     print( "T", threshold, "A", a)
     TS.append(threshold)
