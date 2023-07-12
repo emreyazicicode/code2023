@@ -56,6 +56,7 @@ dfx.to_csv("week9_2_dfx.csv")
 proportion = train['Class'].value_counts(normalize=True).to_dict()
 
 
+classifiers = {}
 
 for cls in list(set(list(classnames.values()))):
     # Rock
@@ -89,16 +90,65 @@ for cls in list(set(list(classnames.values()))):
 
     print("PROPORTION", cls, p, "RATIO", len(tr0) / len(tr1))
 
-    clf = RandomForestClassifier(max_depth=5, random_state=0) #  dummy model, temporary
+    algo = RandomForestClassifier(max_depth=5, random_state=0) #  dummy model, temporary
+    # voting!
+
     y = tr['Class']
     del tr['Class']
-    clf.fit(tr, y)
+    algo.fit(tr, y)
 
     te_y = te['Class']
     del te['Class']
 
-    print( cls, f1_score(te_y, clf.predict(te)) )
+    classifiers[ cls ] = algo # save the trained models to a dictionary of <key=className, value=algo>
+    # --> tp tn fp fn
 
+    print( cls, f1_score(te_y, algo.predict(te)) )
+
+
+
+print(classifiers)
+copied = train.copy()
+
+y = copied['Class']
+del copied['Class']
+
+
+results = {}
+for c in classifiers:
+    #: Predict the results of each "classifier", save it to dictionary of <key=className, value=results>
+    results[c] = classifiers[c].predict_proba( copied )[:,1]
+
+print(results)
+
+for c in results:
+    #: Add the column "CLASS_Rock" with the values of predicted (result of the model)
+    copied[ 'CLASS_' + c ] = results[c]
+
+
+def getsum(row) -> float:
+    total = 0
+    for c in list(set(list(classnames.values()))):
+        total += row['CLASS_' + c]
+    return total
+
+
+def getmax(row) -> str:
+    maxval = 0
+    maxitm = None
+    for c in list(set(list(classnames.values()))):
+        v = row['CLASS_' + c]
+        if v > maxval:
+            maxval = v
+            maxitm = c
+    return maxitm
+
+
+copied['sum'] = copied.apply(lambda row: getsum(row), axis = 1)
+copied['max'] = copied.apply(lambda row: getmax(row), axis = 1)
+
+copied['Class'] = y
+copied.to_csv("week9_3_out.csv")
 
 # HOW TO DECIDE SOMETHING
 # 
