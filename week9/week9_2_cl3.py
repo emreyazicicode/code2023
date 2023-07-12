@@ -1,3 +1,4 @@
+import math
 import warnings
 from sklearn.metrics import f1_score
 from sklearn.ensemble import RandomForestClassifier
@@ -52,9 +53,12 @@ for g in train.groupby( by = ['Class'] ):
 print(dfx)
 dfx.to_csv("week9_2_dfx.csv")
 
+proportion = train['Class'].value_counts(normalize=True).to_dict()
 
 
-for cls in list(classnames.values()):
+
+for cls in list(set(list(classnames.values()))):
+    # Rock
     copied = train.copy()
     copied[ 'Class' ] = copied[ 'Class' ].apply(lambda value: 1 if value == cls else 0) # if class == rock 1, else 0
     # copied.to_csv(f"week9_2_music_{cls}.csv" )
@@ -64,18 +68,31 @@ for cls in list(classnames.values()):
     te = copied[limit:]
 
     #: REBALANCING
-    # ASSIGNMENT:
+    # ASSIGNMENT - 1:
     # ASSIGN THE VALUE OF FRAC IN REBALANCING, ACCORDING TO PROPRTION OF THE DATASET, DYNAMICALLY
-    tr0 = tr[ tr['Class'] == 0 ].sample(frac = 0.15)
+    # [12 July]
+
+    # ASSIGNMENT - 2:
+    # TRY TO USE THE COLUMN ARTIST NAME IN A WAY, WHICH BECOMES USEFUL
+    # [14 July]
+
+    #! p = 0.15
+    p = math.sqrt(proportion[ cls ])
+    #p = math.pow( proportion[cls], 0.5) # 0.4, 0.6
+
     tr1 = tr[ tr['Class'] == 1 ]
+    tr0 = tr[ tr['Class'] == 0 ].sample(frac = p) # rebalancing
+    #! tr0 = tr[ tr['Class'] == 0 ].sample(n = len(tr1)) # rebalancing
+
     tr = pd.concat( [tr0, tr1] )
-    tr = tr.sample(frac = 1.0)
+    tr = tr.sample(frac = 1.0) # shuffle
+
+    print("PROPORTION", cls, p, "RATIO", len(tr0) / len(tr1))
 
     clf = RandomForestClassifier(max_depth=5, random_state=0) #  dummy model, temporary
     y = tr['Class']
     del tr['Class']
     clf.fit(tr, y)
-
 
     te_y = te['Class']
     del te['Class']
@@ -83,12 +100,27 @@ for cls in list(classnames.values()):
     print( cls, f1_score(te_y, clf.predict(te)) )
 
 
+# HOW TO DECIDE SOMETHING
+# 
+
+"""
+DYNAMIC RATIO
+Rock 0.5506072874493928
+Pop 0.689419795221843
+Metal 0.5783132530120483
+HipHop 0.6936829558998807
+Alt 0.499774062358789
+Blues 0.9048843187660668
+Acoustic_Folk 0.5883306320907616
+Instrumental 0.4907275320970043
+Country 0.5063291139240507
+Indie 0.004728132387706856
+"""
+
 
 """
 AFTER
 Rock 0.46554364471669213
-Indie 0.22371364653243847
-Alt 0.4261384672343576
 Pop 0.6239554317548747
 Metal 0.5602094240837695
 HipHop 0.5864045864045864
