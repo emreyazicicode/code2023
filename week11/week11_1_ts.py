@@ -1,14 +1,27 @@
+import numpy as np
 from math import ceil
 import datetime
 import pandas as pd
 from datetime import date, timedelta
 import calendar
 from calendar import monthrange
-
-
-
 import ephem
 import datetime
+
+def linreg(X, Y):
+    """
+    return a,b in solution to y = ax + b such that root mean square distance between trend line and original points is minimized
+    """
+    N = len(X)
+    Sx = Sy = Sxx = Syy = Sxy = 0.0
+    for x, y in zip(X, Y):
+        Sx = Sx + x
+        Sy = Sy + y
+        Sxx = Sxx + x*x
+        Syy = Syy + y*y
+        Sxy = Sxy + x*y
+    det = Sxx * N - Sx * Sx
+    return (Sxy * N - Sy * Sx)/det, (Sxx * Sy - Sx * Sxy)/det
 
 def calculate_day_length(latitude, longitude, date):
     observer = ephem.Observer()
@@ -119,15 +132,58 @@ def lastFriday(year: int, month: int) -> int:
 def firstMonday(year: int, month: int) -> int:
 	return min(week[calendar.MONDAY] for week in calendar.monthcalendar(year, month))
 
-
-
 #: Find the list of holidays
 # call center
-tr_tatiller = ['2018-08-20','2018-08-21','2018-08-22','2018-08-23','2018-08-24','2018-08-30','2019-08-10','2019-08-11','2019-08-12','2019-08-13','2019-08-14','2019-08-30','2020-08-01','2020-08-02','2020-08-03','2020-08-30','2018-12-31','2019-12-31','2020-12-31','2018-10-28','2018-10-29','2019-10-28','2019-10-29','2020-10-28','2020-10-29','2018-06-14','2018-06-15','2018-06-16','2018-06-17','2019-06-03','2019-06-04','2019-06-05','2019-06-06','2018-05-01','2018-05-19','2019-05-01','2019-05-19','2020-05-01','2020-05-19','2020-05-23','2020-05-24','2020-05-25','2020-05-26','2018-04-23','2019-04-23','2020-04-23','2018-01-01','2019-01-01','2020-01-01','2018-07-15','2019-07-15','2020-07-15','2020-07-30','2020-07-31']
+tr_tatiller = [
+	'2018-08-20',    '2018-08-21',    '2018-08-22',    '2018-08-23',   '2018-08-24',   '2018-08-30', '2019-08-10','2019-08-11','2019-08-12','2019-08-13','2019-08-14','2019-08-30','2020-08-01','2020-08-02','2020-08-03','2020-08-30','2018-12-31','2019-12-31','2020-12-31','2018-10-28','2018-10-29','2019-10-28','2019-10-29','2020-10-28','2020-10-29','2018-06-14','2018-06-15','2018-06-16','2018-06-17','2019-06-03','2019-06-04','2019-06-05','2019-06-06','2018-05-01','2018-05-19','2019-05-01','2019-05-19','2020-05-01','2020-05-19','2020-05-23','2020-05-24','2020-05-25','2020-05-26','2018-04-23','2019-04-23','2020-04-23','2018-01-01','2019-01-01','2020-01-01','2018-07-15','2019-07-15','2020-07-15','2020-07-30','2020-07-31'
+]
 #: Make a unique list
 tr_tatiller = list(set(tr_tatiller))
 #: Load the dataset
 df = pd.read_excel( "week10_tsdata_original.xlsx" )
+
+#: Normalize the target!
+mean = df['Value'].mean()
+df['Value'] = df['Value'] - mean
+# series       series          single value
+
+# Find Trend
+values = df['Value']
+m,n = linreg(range(len(values)), values) 
+print("TREND", m, n)
+
+
+# method: commonInDataset
+# Returns the dictionary of commons in the given dataset
+# @dataFrame, pd.DataFrame: The input dataframe
+# @roles, dict: The roles dictionary
+# @return, dict: The assigned columns and their values
+# @completed
+def commonInDataset( dataFrame: pd.DataFrame, roles: dict ) -> dict:
+	output = {}
+	
+	#: Loop for each role
+	for r in roles:
+		#: If flag
+		if roles[r] == 'flag':
+			v = dataFrame[r].mean()
+			if v < 0.05 or v > 0.95:
+				output[ r ] = v
+		elif roles[r] == 'categoric' or roles[r] == 'ordinal':
+			vc = pd.DataFrame( dataFrame[r].value_counts().reset_index() ).iloc[0]
+			vc = list(vc.values)
+			if vc[1] / len(dataFrame) > 0.50:
+				output[ r ] = vc[0]
+		elif roles[r] == 'numeric':
+			q1 = dataFrame[r].quantile(0.25)
+			q3 = dataFrame[r].quantile(0.75)
+			mu = dataFrame[r].mean()
+			if q3 - q1 < mu / 2.0: 
+				output[ r ] = mu
+	return output
+
+
+
 #: A function to check a "TimeStamp object" in a list or not
 def isholiday( dt ) -> bool:
     #: Split to get only date part, skip the time part
@@ -139,6 +195,21 @@ def isholiday( dt ) -> bool:
 df['Holiday'] = df['Date'].apply( isholiday )
 #: Convert to integer
 df['Holiday'] = df['Holiday'].astype(int)
+
+
+df['Month'] = df['Date'].dt.month
+df['M-1112'] = df['Month'].isin([11,12])
+df['M-45'] = df['Month'].isin([4,5])
+df['M-121'] = df['Month'].isin([12,1])
+
+del df['Month']
+
+# holiday length
+# holiday type
+# holiday join with [saturday, sunday]
+
+
+
 
 print("Holiday Count:Match", df['Holiday'].sum() )
 print("Holiday Count:List", len(tr_tatiller) )
@@ -288,4 +359,118 @@ df.corr().abs().to_csv("week11_1_corr.csv")
 
 
 print(df.corr())
+
+
+# SIMPLE MODEL [number of rows is very low] [in time series, data length usually is "low"]
+# ---> SIMPLE ALGORITHM
+# ---> SIMPLE NUMBER OF FEATURES --> VERY STRONG FEATURES
+# 
+
+# 
+week_and_season = {}
+for g in df.groupby(by = ['WeekDay', 'Season2_1']):
+    week_and_season[ g[0] ] = g[1]['Value'].mean()
+
+print(week_and_season)
+# (3, 0) == weekday=3, thursday, not winter
+
+
+df['WeekSeasonAvg'] = df.apply( lambda row: week_and_season[ (row['WeekDay'], row['Season2_1']) ], axis = 1 )
+print("WeekSeasonAvg", df['Value'].corr(df['WeekSeasonAvg']))
+
+
+#* TREND
+#* LAG
+#for i in [1,2,3,5,7,14,15,30]:
+#	print("LAG", i, df['Value'].corr( df['Value'].shift(i) ) )
+
+# sub approach
+df['Lag7'] = df['Value'].shift(7)
+
+#* MOVING AVERAGE
+
+
+
+
+colsToInt = ['LastDays','summerBreak','FirstMonth','LastMonth','FirstHalf']
+for c in colsToInt:
+	df[c] = df[c].astype(int)
+
+
+
+
+#: Remove unnecessary features
+del df['Day']
+del df['Month']
+
+
+target = 'Value'
+df = df.dropna()
+y = df[target]
+del df[target]
+mydate = df['Date']
+del df['Date']
+
+X = df
+
+from sklearn.neural_network import MLPRegressor
+from sklearn.linear_model import LinearRegression
+from sklearn.metrics import mean_absolute_percentage_error
+
+from sklearn.ensemble import RandomForestRegressor
+
+reg = LinearRegression().fit(X, y)
+reg2 = RandomForestRegressor(max_depth=5, random_state=0).fit(X,y)
+
+
+pred = reg.predict(X)
+pred2 = reg2.predict(X)
+
+
+
+print("MAPE", mean_absolute_percentage_error(y, pred))
+print("R2LN", reg.score(X, y))
+
+
+print("R2NN", reg2.score(X, y))
+
+
+X['pred'] = pred
+X['real'] = y
+X['Date'] = mydate
+X['error'] = X['real'] - X['pred']
+X['abserror'] = np.abs(X['error'])
+X['bigerror'] = X['abserror'] > X['abserror'].mean() * 2.5
+
+
+
+"""
+roles = {
+'Holiday':'flag',
+'WeekDay':'categoric',
+'WeekEnd':'flag',
+'LastDays':'flag',
+'summerBreak':'flag',
+'FirstMonth':'flag',
+'LastMonth':'flag',
+'SummerWinter':'flag',
+'FirstHalf':'flag',
+'Season1_2':'flag',
+'Season2_1':'flag',
+'weekOfMonth':'numeric',
+'DayLength':'numeric',
+'WeekSeasonAvg':'numeric',
+'Lag7':'numeric',
+'Month': 'categoric'
+}
+df['Month'] = df['Date'].dt.month
+r = commonInDataset( df[ (df['bigerror'] == True) & (df['Holiday'] == 1) ], roles )
+print("commonInDataset", r)
+"""
+
+
+
+
+
+X.to_csv("week11_2_out.csv")
 
