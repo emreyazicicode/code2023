@@ -1,0 +1,22 @@
+
+
+graph TD;
+
+Data-->Normalize
+Data-->Flag:Holiday
+Normalize-->DeTrend
+DeTrend-->MovingAverage
+DeTrend-->Lag
+DeTrend-->Time_Related
+
+
+MovingAverage-->Algorithm
+Lag-->Algorithm
+Time_Related-->Algorithm
+Flag:Holiday-->Algorithm
+
+
+Algorithm-->Model
+Model--Trendsiz,Normalize-->Predict
+Predict-->Add:Trend
+Add:Trend-->Add:DeNormalize
