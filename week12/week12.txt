@@ -1,0 +1,134 @@
+
+
+# IF you are going to install application, use APT-GET, else use PIP3
+
+# Search for applications
+sudo apt-cache search sensor
+
+# Install a software
+sudo apt-get install hddtemp lm-sensors
+sudo apt-get install mysql-server
+sudo apt-get install redis
+sudo apt-get install guake
+....
+
+# How to search on google
+ubuntu apt install chrome
+
+# Remove application
+sudo apt-get remove ....
+
+# python library/package installation
+pip3 install ....
+
+https://pypi.org/project/Distance/
+
+
+
+C:\program files
+C:\windows ....
+
+ayar, configuration, settings...
+
+c:\users\emre\  Desktop
+          	Downloads
+          	Pictures
+          	...
+
+
+/home/mina5/
+
+/lib ==> library, all programs are installed here
+/etc ==> config
+/bin ==> runable programs [python]
+
+
+
+# ls
+Lists all files and folders
+ 
+# ls -la
+Lists all files in vertial alignment
+
+
+-rw-rw-r--  1 mina5 mina5       149 May 25  2022  x.py
+            ? [last][owner]     [file date     ]  [filename]
+
+
+-          1st(1 tane)==> dictionary/ file mi? 
+  rw-      owner
+  rw- 	   group
+  r--      user
+
+- == negatif demek yok demek
+
+
+# Dosyayi executable yapar, en sondaki "x" bunu gosterir
+chmod +x [filename]
+
+-rwxrwxr-x  1 mina5 mina5    209 May 14 11:57  test.py
+
+
+
+[FILE]
+[FOLDER]
+[APPLICATION]
+
+
+
+# cp ==> file copy
+cp [from] [to]
+
+# connecting to another server
+ssh user@91.102.161.166
+8Cm3nT1YUH
+
+
+# change directory
+cd [folder]
+
+# secure copy
+scp test.py user@91.102.161.166:/home/user/
+scp [file] [user]@[server]:[path]
+
+# remove file, delete
+rm [filename]
+
+# print working directory
+pwd
+
+# List only py files
+ls -la *.py
+
+# cat, display
+cat [filename]
+
+
+| boru pipe
+iki komutu birlestirir
+
+# Filtrele
+grep ''
+
+# Find in files
+grep -i uvicorn *.py
+
+# editor
+nano [filename]
+
+
+# &
+put & at the end to make it live
+
+# exit
+exit
+exits from the server
+
+
+# create a new folder
+mkdir [foldername]
+
+
+
+
+
