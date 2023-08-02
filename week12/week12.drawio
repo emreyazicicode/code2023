@@ -1,4 +1,4 @@
-<mxfile host="Electron" modified="2023-08-02T05:38:10.812Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="PKFGX6zNUzvFa-owGYaH" version="21.6.5" type="device">
+<mxfile host="Electron" modified="2023-08-02T07:49:25.488Z" agent="Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/21.6.5 Chrome/114.0.5735.243 Electron/25.3.1 Safari/537.36" etag="i1f6HpXfrmT6oQZCf5Fk" version="21.6.5" type="device">
   <diagram name="Page-1" id="cSmn-8tquwKpyGvyZfLS">
     <mxGraphModel dx="1135" dy="703" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" math="0" shadow="0">
       <root>
@@ -1609,6 +1609,358 @@
         </mxCell>
         <mxCell id="HnuS_IDf9GLmCHOXLWpf-492" value="web service : FAST API" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=32;" vertex="1" parent="1">
           <mxGeometry x="795" y="14400" width="280" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-494" value="VIRTUALBOX&lt;br&gt;&lt;br&gt;install an OS(client) inside an OS(host)&lt;br&gt;everything is independed" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="80" y="14970" width="640" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-495" value="WINDOWS" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="805" y="14960" width="285" height="310" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-496" value="VIRTUALBOX" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="842.5" y="15030" width="237.5" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-497" value="ubuntu" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="880" y="15100" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-499" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-498" target="HnuS_IDf9GLmCHOXLWpf-497">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-500" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.074;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-498" target="HnuS_IDf9GLmCHOXLWpf-495">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-498" value="independed" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1160" y="15040" width="200" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-502" value="completely independed" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="81.5" y="15230" width="258.5" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-503" value="use very high amount of resources (hdd, ram)&lt;br&gt;16 gb, 8gb&lt;br&gt;250 TB --&amp;gt; 50 tb" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="360" y="15230" width="359.25" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-504" value="&lt;b&gt;VIRTUALENV&lt;br&gt;&lt;/b&gt;&lt;br&gt;creates a virtual environment for ONLY python packages!!" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="77.5" y="16080" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-505" value="very small size!! only disk" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#d5e8d4;strokeColor=#82b366;" vertex="1" parent="1">
+          <mxGeometry x="77.5" y="16250" width="258.5" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-506" value="focuses only on python ..." style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="358.25" y="16252" width="359.25" height="190" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-508" value="only isolates the packcages&#39; versions (pip3) of python, not programs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="767.5" y="16200" width="395" height="200" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-509" value="&lt;b&gt;numpy 3.2&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="526.5" y="16510" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-510" value="&lt;b&gt;numpy 3.5&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="526.5" y="16590" width="310" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-512" value="affine" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontSize=31;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-511" target="HnuS_IDf9GLmCHOXLWpf-509">
+          <mxGeometry x="-0.0026" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-511" value="&lt;b&gt;code&lt;/b&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="67.5" y="16510" width="200" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-513" value="&lt;b&gt;VIRTUALENV&lt;br&gt;&lt;/b&gt;&lt;br&gt;creates a virtual environment for ONLY python packages!!" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="117.5" y="16050" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-514" value="&lt;b&gt;VIRTUALENV&lt;br&gt;&lt;/b&gt;&lt;br&gt;creates a virtual environment for ONLY python packages!!" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="147.5" y="16010" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-515" value="&lt;b&gt;VIRTUALENV&lt;br&gt;&lt;/b&gt;&lt;br&gt;creates a virtual environment for ONLY python packages!!" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="182.5" y="15970" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-516" value="&lt;b&gt;VIRTUALENV&lt;br&gt;&lt;/b&gt;&lt;br&gt;creates a virtual environment for ONLY python packages!!" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="217.87" y="15933" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-517" value="&lt;b&gt;VIRTUALENV&lt;br&gt;&lt;/b&gt;&lt;br&gt;creates a virtual environment for ONLY python packages!!" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="242.5" y="15890" width="640" height="160" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-518" value="ubuntu" style="rounded=0;whiteSpace=wrap;html=1;horizontal=1;verticalAlign=top;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="860" y="15080" width="180" height="130" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-519" value="DOCKER" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="90" y="15470" width="640" height="230" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-520" value="semi depended" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="90.75" y="15713" width="258.5" height="107" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-521" value="not spending so much disk" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#fff2cc;strokeColor=#d6b656;" vertex="1" parent="1">
+          <mxGeometry x="375.38" y="15713" width="359.25" height="107" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-522" value="&lt;pre style=&quot;font-size: 22px;&quot;&gt;&lt;code class=&quot;hljs dockerfile&quot; style=&quot;font-size: 22px;&quot;&gt;FROM python:&lt;span class=&quot;hljs-number&quot; style=&quot;font-size: 22px;&quot;&gt;3.8 [ 100.000 tane ]&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-comment&quot; style=&quot;font-size: 22px;&quot;&gt;# set a directory for the app&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;font-size: 22px;&quot;&gt;WORKDIR&lt;/span&gt;&lt;span class=&quot;bash&quot; style=&quot;font-size: 22px;&quot;&gt; /usr/src/app&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-comment&quot; style=&quot;font-size: 22px;&quot;&gt;# copy all the files to the container&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;font-size: 22px;&quot;&gt;COPY&lt;/span&gt;&lt;span class=&quot;bash&quot; style=&quot;font-size: 22px;&quot;&gt; . .&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-comment&quot; style=&quot;font-size: 22px;&quot;&gt;# install dependencies&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;font-size: 22px;&quot;&gt;RUN&lt;/span&gt;&lt;span class=&quot;bash&quot; style=&quot;font-size: 22px;&quot;&gt; pip install --no-cache-dir -r &lt;b&gt;requirements.txt&lt;/b&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-comment&quot; style=&quot;font-size: 22px;&quot;&gt;# define the port number the container should expose&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;font-size: 22px;&quot;&gt;EXPOSE&lt;/span&gt; &lt;span class=&quot;hljs-number&quot; style=&quot;font-size: 22px;&quot;&gt;5000&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-comment&quot; style=&quot;font-size: 22px;&quot;&gt;# run the command&lt;/span&gt;&lt;br style=&quot;font-size: 22px;&quot;&gt;&lt;span class=&quot;hljs-keyword&quot; style=&quot;font-size: 22px;&quot;&gt;CMD&lt;/span&gt;&lt;span class=&quot;bash&quot; style=&quot;font-size: 22px;&quot;&gt; [&lt;span class=&quot;hljs-string&quot; style=&quot;font-size: 22px;&quot;&gt;&quot;python&quot;&lt;/span&gt;, &lt;span class=&quot;hljs-string&quot; style=&quot;font-size: 22px;&quot;&gt;&quot;./app.py&quot;&lt;/span&gt;]&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;" style="rounded=0;whiteSpace=wrap;html=1;fontSize=22;align=left;" vertex="1" parent="1">
+          <mxGeometry x="89" y="16760" width="811" height="520" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-526" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-523" target="HnuS_IDf9GLmCHOXLWpf-524">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="630" y="17685" />
+              <mxPoint x="630" y="17500" />
+              <mxPoint x="773" y="17500" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-523" value="web service&lt;br&gt;&lt;br&gt;estimate (takes too long) credict_score" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="130" y="17520" width="242" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-525" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-524" target="HnuS_IDf9GLmCHOXLWpf-523">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-540" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-524">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1180" y="17720" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-524" value="customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="758" y="17580" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-527" value="5000" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="690" y="17450" width="60" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-528" value="apply" style="rounded=1;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="320" y="17920" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-529" value="FIN" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="320" y="17850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-530" value="10 dakika" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="622.5" y="17710" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-532" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.468;entryY=-0.006;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-531" target="HnuS_IDf9GLmCHOXLWpf-523">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-531" value="government" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=33;" vertex="1" parent="1">
+          <mxGeometry x="120" y="17390" width="240" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-533" value="cc1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="180" y="18020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-534" value="5000" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="180" y="18080" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-535" value="cc2" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="300" y="18020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-536" value="5000" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="300" y="18080" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-537" value="cc3" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="420" y="18020" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-538" value="2000" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="420" y="18080" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-542" value="&lt;b&gt;&lt;font style=&quot;font-size: 32px;&quot;&gt;SAGOL&lt;/font&gt;&lt;/b&gt;" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-541" target="HnuS_IDf9GLmCHOXLWpf-524">
+          <mxGeometry x="0.0917" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-544" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-541" target="HnuS_IDf9GLmCHOXLWpf-543">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-541" value="apply" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1120" y="17721" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-546" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=1;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-543" target="HnuS_IDf9GLmCHOXLWpf-545">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-543" value="" style="outlineConnect=0;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;shape=mxgraph.aws3.bucket;fillColor=#E05243;gradientColor=none;" vertex="1" parent="1">
+          <mxGeometry x="1343" y="17740" width="217" height="280" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-545" value="government&lt;br style=&quot;font-size: 32px;&quot;&gt;merkez&amp;nbsp;&lt;br style=&quot;font-size: 32px;&quot;&gt;bankasi" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1180" y="18030" width="220" height="140" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-548" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-547" target="HnuS_IDf9GLmCHOXLWpf-543">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-547" value="customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1440" y="17490" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-550" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-549" target="HnuS_IDf9GLmCHOXLWpf-543">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-549" value="customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1624" y="17510" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-552" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-551" target="HnuS_IDf9GLmCHOXLWpf-543">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-551" value="customer" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1260" y="17500" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-553" value="app1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;fillColor=#f8cecc;strokeColor=#b85450;" vertex="1" parent="1">
+          <mxGeometry x="1389" y="17940" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-554" value="app1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1389" y="17900" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-555" value="app1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1375" y="17870" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-556" value="app1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1375" y="17850" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-557" value="app1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="17830" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-596" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-558">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1610" y="17940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-558" value="app1" style="rounded=0;whiteSpace=wrap;html=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1380" y="17820" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-560" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-559" target="HnuS_IDf9GLmCHOXLWpf-553">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-561" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-559" target="HnuS_IDf9GLmCHOXLWpf-545">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1774" y="18140" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-564" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-559" target="HnuS_IDf9GLmCHOXLWpf-563">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-559" value="background application" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fontStyle=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1664" y="17880" width="220" height="220" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-562" value="20 dakika" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1892.5" y="18030" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-566" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.278;entryY=1.094;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-563" target="HnuS_IDf9GLmCHOXLWpf-565">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-570" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.444;entryY=1.178;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-563" target="HnuS_IDf9GLmCHOXLWpf-569">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-563" value="model" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1835" y="17740" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-567" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0.5;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-565" target="HnuS_IDf9GLmCHOXLWpf-549">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="2085" y="17610" />
+              <mxPoint x="1639" y="17610" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-565" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(empty);" vertex="1" parent="1">
+          <mxGeometry x="2070" y="17700" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-568" value="KAFKA&lt;br&gt;queue" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1200" y="17860" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-571" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-569" target="HnuS_IDf9GLmCHOXLWpf-547">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-569" value="" style="html=1;verticalLabelPosition=bottom;align=center;labelBackgroundColor=#ffffff;verticalAlign=top;strokeWidth=2;strokeColor=#0080F0;shadow=0;dashed=0;shape=mxgraph.ios7.icons.envelope_(empty);" vertex="1" parent="1">
+          <mxGeometry x="1730" y="17670" width="30" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-572" value="3000" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1840" y="17540" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-573" value="FIFO&lt;br&gt;first in&lt;br&gt;first out" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="935" y="17900" width="125" height="270" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-574" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="2220" y="17930" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-575" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="2283.5" y="17930" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-576" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="2660" y="18040" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-577" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="2410" y="17910" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-580" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-578" target="HnuS_IDf9GLmCHOXLWpf-579">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-578" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="2370" y="17640" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-581" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.75;exitDx=0;exitDy=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-579" target="HnuS_IDf9GLmCHOXLWpf-578">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-579" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="2550" y="17630" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-582" value="0.01 saniye" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2480" y="17520" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-583" value="senkron" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2640" y="17510" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-584" value="calculate butonuna tikladi, cevabini bekliyor!!" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2480" y="17730" width="310" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-585" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" source="HnuS_IDf9GLmCHOXLWpf-586" target="HnuS_IDf9GLmCHOXLWpf-588" parent="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-594" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-586" target="HnuS_IDf9GLmCHOXLWpf-593">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="3040" y="17690" />
+              <mxPoint x="3040" y="17430" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-586" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;" vertex="1" parent="1">
+          <mxGeometry x="2990" y="17660" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-588" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="3170" y="17650" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-589" value="??" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="3100" y="17540" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-590" value="asenkron" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="3260" y="17530" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-591" value="cevabini o an hemen beklemiyor" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="3100" y="17750" width="310" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-593" value="" style="shape=process;whiteSpace=wrap;html=1;backgroundOutline=1;" vertex="1" parent="1">
+          <mxGeometry x="3210" y="17390" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-595" value="daha cevap gelmeden baska bankaya basvuru yapabilir" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2975" y="17440" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-597" value="database&lt;br&gt;&lt;br&gt;harddisk uzerinde bir dosya!!!!" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1710" y="17060" width="240" height="290" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-599" value="harddisk yavas calisir!!" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1551" y="17155" width="125" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-600" value="profile" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2025" y="16920" width="265" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-601" value="transactions [bank]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2025" y="17045" width="265" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-606" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;" edge="1" parent="1" source="HnuS_IDf9GLmCHOXLWpf-602" target="HnuS_IDf9GLmCHOXLWpf-605">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-602" value="channels&lt;br&gt;[bank]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2018.5" y="17170" width="265" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-603" value="other features&lt;br&gt;[bank]" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2020" y="17300" width="265" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-604" value="operation&lt;br&gt;atm money withdrawal&lt;br&gt;&lt;br&gt;mobile money sending&lt;br&gt;&lt;br&gt;......." style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2365" y="17020" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-605" value="mobile&lt;br&gt;web&lt;br&gt;phone banking" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="2680" y="17180" width="210" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="HnuS_IDf9GLmCHOXLWpf-608" value="MEMORY&lt;br&gt;&lt;br&gt;REDIS" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=32;" vertex="1" parent="1">
+          <mxGeometry x="1695" y="16680" width="240" height="290" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
