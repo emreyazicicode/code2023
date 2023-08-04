@@ -82,6 +82,9 @@ app = FastAPI()
 async def root():
     return {"result": forecastTomorrow()}
 
+
+
+
 uvicorn.run(
     app,
     host="0.0.0.0",
