@@ -1,7 +1,7 @@
 
 import pandas as pd
 df = pd.read_excel("week14_satisfaction.xlsx")
-df = df.sample(n = 20000)
+#df = df.sample(n = 20000)
 
 """
 from ydata_profiling import ProfileReport
@@ -21,6 +21,8 @@ del df['id']
 
 df.corr().to_csv("week14_1_corr.csv")
 df.to_csv("week14_1_processed.csv")
+
+
 
 
 
