@@ -3,14 +3,7 @@ import pandas as pd
 df = pd.read_csv("week14_1_processed.csv")
 
 
-#! 
-for t in df['Flight Distance'].unique():
-    sub = df[ df['Flight Distance'] == t ]
-    if len(sub) > 90:
-        print(t, len(sub))
-
 print(df['Flight Distance'].value_counts())
-del df['Unnamed: 0']
 
 cols = ['Gender','Customer Type','Age','Type of Travel','Class']
 
@@ -55,3 +48,56 @@ for r in [2, 5, 10, 15, 20, 25,30,60,90,120,180,240,360,480]:
 
 
 """
+
+
+# PCA
+# LDA
+# Flight Count
+# Age
+
+df = df.fillna(0)
+from sklearn.discriminant_analysis import LinearDiscriminantAnalysis
+clf = LinearDiscriminantAnalysis()
+clf.fit( df.drop(columns=['satisfaction_v2']), df['satisfaction_v2']  )
+df['lda'] = clf.predict( df.drop(columns=['satisfaction_v2']) )
+print(df['lda'].corr(df['satisfaction_v2']))
+
+# PCA 
+# LDA 
+# Kmeans / DBScan
+# Feature mining
+
+
+import matplotlib.pyplot as plt
+
+xs = []
+ys = []
+
+df['FlightRound'] = df['Flight Distance'].apply(lambda value: value) # round(value, -1)
+
+
+for g in df.groupby(by=['FlightRound']):
+    xs.append(g[0])
+    ys.append(g[1]['satisfaction_v2'].mean())
+plt.scatter( xs, ys )
+plt.show()
+
+df['A3'] = df['Age'].apply(lambda value: 1 if value > 39 and value < 61 else 0)
+
+del df['Arrival Delay in Minutes']
+del df['Departure Delay in Minutes']
+del df['FlightRound']
+# inter correlate
+
+
+from sklearn.ensemble import RandomForestClassifier
+clf = RandomForestClassifier(max_depth=5, random_state=0)
+clf.fit( df.drop(columns=['satisfaction_v2']), df['satisfaction_v2']  )
+cols = df.drop(columns=['satisfaction_v2']).columns
+
+da = pd.DataFrame(columns = ['index', 'col', 'fi', 'cor'])
+for i in range(len(cols)):
+    da.loc[len(da)] = [i, cols[i], clf.feature_importances_[i], abs(df[cols[i]].corr(df['satisfaction_v2']))]
+    print(i, cols[i], clf.feature_importances_[i], df[cols[i]].corr(df['satisfaction_v2']))
+
+da.to_csv("week14_1_out.csv")
