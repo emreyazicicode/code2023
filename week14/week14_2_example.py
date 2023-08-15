@@ -26,24 +26,44 @@ df = df.sort_values(by = ['id'])
 del df['id']
 
 #: Discarding Outliers, : CLIPPING, REMOVING
+#!
 
-#: Filling empties
+#: Filling empties, drop + fillwith0 + fillwithmean + fillwithmode
+#! 
 
 #: Normalize
+#!
 
 #: Transform
+# -- type casting
+# -- log, sqrt
+# -- dummy
 
-#: Feature mining
+#: Feature mining + tenure
+# -- merging
+# -- creating new
+# -- heatmap
 
 #: Feature elimination
+# -- intercorrelation
+# -- low corelation
+# -- unique
+# -- same
 
 #: Data aging
+# iptal
 
 #: Re-balancing
+# iptal
 
-#: Shuffling
+#: Shuffling, sub-sampling
+# -- shuffle
+# -- sample only some part of the dataset
 
-#: Problem representation, splitting etc
+
+
+
+#: Problem representation: splitting etc
 
 #: Modelling
 
