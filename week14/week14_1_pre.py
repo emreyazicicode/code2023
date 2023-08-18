@@ -87,17 +87,37 @@ df['A3'] = df['Age'].apply(lambda value: 1 if value > 39 and value < 61 else 0)
 del df['Arrival Delay in Minutes']
 del df['Departure Delay in Minutes']
 del df['FlightRound']
-# inter correlate
-
 
 from sklearn.ensemble import RandomForestClassifier
 clf = RandomForestClassifier(max_depth=5, random_state=0)
 clf.fit( df.drop(columns=['satisfaction_v2']), df['satisfaction_v2']  )
 cols = df.drop(columns=['satisfaction_v2']).columns
 
+
+xs = []
+ys = []
+ts = []
+
 da = pd.DataFrame(columns = ['index', 'col', 'fi', 'cor'])
 for i in range(len(cols)):
     da.loc[len(da)] = [i, cols[i], clf.feature_importances_[i], abs(df[cols[i]].corr(df['satisfaction_v2']))]
     print(i, cols[i], clf.feature_importances_[i], df[cols[i]].corr(df['satisfaction_v2']))
+    xs.append( clf.feature_importances_[i] )
+    ys.append( abs(df[cols[i]].corr(df['satisfaction_v2'])) )
+    ts.append( cols[i] )
+
+
+fig, ax = plt.subplots()
+ax.scatter(xs, ys)
+
+for i in range(len(ts)):
+    ax.annotate(ts[i], (xs[i], ys[i]))
+
+plt.show()
 
 da.to_csv("week14_1_out.csv")
+
+
+
+
+# remove inter correlate
